@@ -1,0 +1,23 @@
+#include<stdio.h>
+//tower of hanoi
+void towerofhanoi( int n ,char ta,char tb ,char tc)
+{
+	 if(n==1)
+	   printf(" \n move %d disk from  tower%c  to tower %c \n",n,ta,tc);
+	 else
+	 {
+	 	towerofhanoi(n-1 ,ta,tc,tb);
+		printf("\n move %d disk from  tower%c  to tower %c \n ",n,ta,tc) ;
+		towerofhanoi(n-1,tb,ta,tc) ; 
+		}   
+}
+void main()
+{
+	 int n ;
+     char ta ,tb,tc;
+	 ta='A',tb='B',tc='C';
+	 printf(" \n enter the no of disks :\n");
+	 scanf("%d",&n);
+	 towerofhanoi(n,ta,tb,tc);
+	 
+}
